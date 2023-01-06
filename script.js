@@ -102,10 +102,11 @@ window.onload = async () => {
     getTweetsAndInsertHTML();
 };
 
+
 document.addEventListener('click', async event => {
     if (event.target.classList.contains('tweetpost')) {
         const tweetText = document.querySelector('.tweet-post-text').value;
-
+        console.log(tweetText)
         const data = {
         title: tweetText,
         text: 'Random Value',
@@ -115,23 +116,23 @@ document.addEventListener('click', async event => {
         const tweetResponse = await fetch(
         'https://twitter-backend-6yot.onrender.com/tweet/create',
         {
-          method: 'POST',
-          headers: {
+            method: 'POST',
+            headers: {
             'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
+            },
+            body: JSON.stringify(data),
         }
-      );
+        );
 
-      const tweet = await tweetResponse.json();
+        const tweet = await tweetResponse.json();
 
-      if (tweet.status !== 200) {
+        if (tweet.status !==200) {
         alert(tweet.message);
         return;
-      }
+        }
 
-      document.querySelector('.tweet-post-text').value = '';
-      alert(tweet.message);
+        document.querySelector('.tweet-post-text').value = '';
+        alert(tweet.message);
     }
 
     if (event.target.classList.contains('tweet-delete')) {
@@ -151,14 +152,13 @@ document.addEventListener('click', async event => {
             'Content-Type': 'application/json',
             },
             body: JSON.stringify(data),
-        }
-        );
+        });
 
         const result = await response.json();
 
         if (result.status !== 200) {
-        alert(result.message);
-        return;
+            alert(result.message);
+            return;
         }
 
         alert('Tweet deleted successfuly');
@@ -169,7 +169,7 @@ document.addEventListener('click', async event => {
     if (event.target.classList.contains('tweet-edit')) {
     const tweetId = event.target.getAttribute('data-id');
 
-    const span = document.getElementById('span-' + tweetId);
+    const span = document.getElementsByClassName('usercontent' + tweetId);
 
     const tweetText = prompt('Enter new tweet text', span.innerText);
 
