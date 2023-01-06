@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -30,29 +31,19 @@
   text-decoration: none;
   color: var(--light-gray);
 }
-.hline {
+.topBorder {
   width: 100%;
   height: 1px;
   background-color: var(--darkish-blue);
 }
-/* .vline {
-  width: 1px;
-  height: 100vh;
-  background-color: var(--darkish-blue);
-  background-color: rgb(18, 163, 189);
-  position: fixed ;
-  top: 0;
-  z-index: 2200;
-} */
 
-.vline {
+.border {
   width: 5px;
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-.htline {
-  width: 100%;
-  height: 13px;
+.bottomBorder {
+  height: 10px;
   background-color: var(--charcoal);
   border: 1px solid var(--darkish-blue);
   flex-direction: row;
@@ -61,18 +52,20 @@
 .space-in-word-of-tweet {
   margin: 3px;
 }
+
 body {
   background-color: var(--black);
   color: var(--light-gray);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
     Arial, sans-serif;
 }
+
 .container {
   display: flex;
   flex-direction: row;
 }
 
-/*#------------------------- Left Aside */
+/*#------------------------- LEFT ASIDE */
 
 .left {
   padding: 0px 29px 0px 110px;
@@ -110,7 +103,7 @@ body {
 }
 .flex {
   display: flex;
-  align-items: center;
+  /* align-items: flex-start; */
 }
 .padding {
   padding: 0px 15px 0px 0px;
@@ -135,10 +128,6 @@ nav ul .homebar,
   color: var(--blue);
   cursor: pointer;
 }
-
-/* .homesvg{
-  filter: invert(59%) sepia(53%) saturate(4760%) hue-rotate(176deg) brightness(99%) contrast(91%);
-} */
 
 .left nav ul li:hover {
   color: var(--blue);
@@ -178,10 +167,7 @@ nav ul .homebar,
   justify-content: center;
   align-items: center;
 }
-.mediatweetsvgpath {
-  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(78deg) brightness(107%)
-    contrast(102%);
-}
+
 .tweet:hover {
   background-color: var(--blue-hover);
 }
@@ -196,7 +182,7 @@ nav ul .homebar,
   justify-content: center;
   align-items: center;
   position: relative;
-  top: 50px;
+  top: 10px;
 }
 .profileImg {
   height: 40px;
@@ -220,7 +206,7 @@ nav ul .homebar,
   background-color: var(--blue-hover);
 }
 
-/* Centre */
+/*#-------------------------------- CENTER */
 
 .centre {
   display: flex;
@@ -293,7 +279,22 @@ nav ul .homebar,
 .otheruser {
   display: flex;
   flex-direction: column;
-  padding: 10px 0px 0px 15px;
+  padding: 10px;
+}
+
+.postHeading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.otheruser button {
+  width: 50px;
+  background-color: var(--btn-blue);
+  height: 25px;
+  font-weight: bold;
+  border-radius: 15px;
+  cursor: pointer;
+  color: var(--white);
 }
 
 .otherimg {
@@ -318,7 +319,6 @@ nav ul .homebar,
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0px 10px 10px 0px;
 }
 
 .givenimage {
@@ -330,6 +330,7 @@ nav ul .homebar,
 .usertweetoptions {
   display: flex;
   flex-direction: row;
+  margin-top: 10px;
 }
 
 .replybox {
@@ -372,7 +373,7 @@ nav ul .homebar,
   color: var(--green);
 }
 
-/* Right */
+/*#--------------------------------- RIGHT ASIDE */
 
 .right {
   position: -webkit-sticky;
@@ -413,7 +414,7 @@ nav ul .homebar,
 
 .whatsHappiningContainer {
   padding: 20px 0px 0px 42px;
-  width: 85%;
+  width: 80%;
   font-family: sans-serif;
   color: var(--light-gray);
 }
@@ -559,6 +560,8 @@ nav ul .homebar,
   cursor: pointer;
   text-decoration: underline;
 }
+
+/* #======================== MEDIA QUERY=================== */
 
 @media screen and (max-width: 1495px) {
   .tweetpost {
