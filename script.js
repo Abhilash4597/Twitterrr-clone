@@ -46,7 +46,7 @@ async function getTweetsAndInsertHTML() {
                         ${tweet.title}
                     </div>
                     <div class="userupimage">
-                        <img src="https://source.unsplash.com/480x360/?fruit" alt="img" class="givenimage" />
+                        <img src="https://source.unsplash.com/480x360/?" alt="img" class="givenimage" />
                     </div>
                     <div class="usertweetoptions">
                         <div class="replybox">
